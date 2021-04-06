@@ -66,6 +66,10 @@ void Monitor::Initialize(
         DXGI_OUTPUT_DESC1 desc1;
         if (SUCCEEDED(output6->GetDesc1(&desc1)))
         {
+            colorSpace_ = desc1.ColorSpace;
+            minLuminance_ = desc1.MinLuminance;
+            maxLuminance_ = desc1.MaxLuminance;
+            maxFullFrameLuminance_ = desc1.MaxFullFrameLuminance;
             isHDR_ = desc1.ColorSpace == DXGI_COLOR_SPACE_TYPE::DXGI_COLOR_SPACE_RGB_FULL_G2084_NONE_P2020;
         }
     }
@@ -303,6 +307,30 @@ int Monitor::GetWidth() const
 int Monitor::GetHeight() const
 {
     return height_;
+}
+
+
+int Monitor::GetColorSpace() const
+{
+    return colorSpace_;
+}
+
+
+float Monitor::GetMinLuminance() const
+{
+    return minLuminance_;
+}
+
+
+float Monitor::GetMaxLuminance() const
+{
+    return maxLuminance_;
+}
+
+
+float Monitor::GetMaxFullFrameLuminance() const
+{
+    return maxFullFrameLuminance_;
 }
 
 

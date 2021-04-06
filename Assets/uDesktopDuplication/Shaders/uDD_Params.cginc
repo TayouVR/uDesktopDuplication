@@ -7,6 +7,11 @@ half _ColorScale;
 half _Radius;
 half _Width;
 half _Thickness;
+float _IsHDR;
+int _ColorSpace;
+float _MinLuminance;
+float _MaxLuminance;
+float _MaxFullFrameLuminance;
 
 half4 _CursorPositionScale;
 #define _CursorX _CursorPositionScale.x

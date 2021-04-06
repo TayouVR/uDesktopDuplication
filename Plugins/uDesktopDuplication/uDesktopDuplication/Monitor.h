@@ -46,6 +46,10 @@ public:
     int GetRotation() const;
     int GetDpiX() const;
     int GetDpiY() const;
+    int GetColorSpace() const;
+    float GetMinLuminance() const;
+    float GetMaxLuminance() const;
+    float GetMaxFullFrameLuminance() const;
     bool IsHDR() const;
     Microsoft::WRL::ComPtr<IDXGIOutputDuplication> GetDeskDupl();
     int GetMoveRectCount() const;
@@ -64,6 +68,10 @@ private:
     const int id_;
     UINT dpiX_ = -1, dpiY_ = -1;
     int width_ = -1, height_ = -1;
+    int colorSpace_ = 0;
+    float minLuminance_ = 0;
+    float maxLuminance_ = 0;
+    float maxFullFrameLuminance_ = 0;
     bool isHDR_ = false;
     bool hasBeenUpdated_ = false;
     bool useGetPixels_ = false;

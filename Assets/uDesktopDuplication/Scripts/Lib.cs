@@ -139,6 +139,14 @@ public static class Lib
     [DllImport(dllName)]
     public static extern int GetDpiY(int id);
     [DllImport(dllName)]
+    public static extern int GetColorSpaceUnity(int id);
+    [DllImport(dllName/*, EntryPoint = "GetColorSpaceUnity"*/)] // Unity does not like this
+    public static extern float GetMinLuminance(int id);
+    [DllImport(dllName)]
+    public static extern float GetMaxLuminance(int id);
+    [DllImport(dllName)]
+    public static extern float GetMaxFullFrameLuminance(int id);
+    [DllImport(dllName)]
     public static extern bool IsHDR(int id);
     [DllImport(dllName)]
     public static extern MonitorRotation GetRotation(int id);

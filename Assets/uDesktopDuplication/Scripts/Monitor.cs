@@ -130,6 +130,26 @@ public class Monitor
         }
     }
 
+    public int GetColorSpace
+    {
+        get { return Lib.GetColorSpaceUnity(id); }
+    }
+
+    public float GetMinLuminance
+    {
+        get { return Lib.GetMinLuminance(id); }
+    }
+
+    public float GetMaxLuminance
+    {
+        get { return Lib.GetMaxLuminance(id); }
+    }
+
+    public float GetMaxFullFrameLuminance
+    {
+        get { return Lib.GetMaxFullFrameLuminance(id); }
+    }
+
     public bool isHDR
     {
         get { return Lib.IsHDR(id); }

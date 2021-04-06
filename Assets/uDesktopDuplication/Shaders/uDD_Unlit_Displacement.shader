@@ -12,6 +12,11 @@ Properties
     _Width ("Width", Range(0.0, 10.0)) = 1.92
     [PowerSlider(10.0)] _Thickness("Thickness", Range(0.01, 10)) = 1
     [KeywordEnum(Off, Front, Back)] _Cull("Culling", Int) = 2
+    [ToggleUI]_IsHDR("Is HDR", Float) = 0
+    //_ColorSpace("Color Space", int) = 0
+    _MinLuminance("Minimal Luminance", Range(0, 1)) = 0
+    _MaxLuminance("Maximum Luminance", Range(0, 1)) = 0
+    _MaxFullFrameLuminance("Max Full Frame Luminance", Range(0, 1)) = 0
     _DispTex ("Displacement Map", 2D) = "black" {}
     _DispFactor("Displacement Factor", Range(0, 5.0)) = 1
     _TessMinDist("Tessellation Min Distance", Range(0.1, 100.0)) = 1.0

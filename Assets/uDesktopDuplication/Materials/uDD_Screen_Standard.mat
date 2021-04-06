@@ -4,13 +4,15 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: uDD_Screen_Standard
   m_Shader: {fileID: 4800000, guid: 1428bebbde173ab4ab509941809d6aec, type: 3}
   m_ShaderKeywords: INVERT_X _CULL_BACK _EMISSION _FORWARD_Y
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
@@ -57,10 +59,12 @@ Material:
     - PixelSnap: 0
     - _Bend: 0
     - _BumpScale: 1
-    - _Cull: 2
+    - _ColorSpace: 0
+    - _Cull: 0
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _Emissive: 0
     - _Forward: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -69,17 +73,20 @@ Material:
     - _InvertX: 1
     - _InvertY: 0
     - _Mask: 0.653
+    - _MaxFullFrameLuminance: 0
+    - _MaxLuminance: 0
     - _Metallic: 0
+    - _MinLuminance: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Radius: 30
+    - _Radius: 1.5278873
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Thickness: 1
+    - _Thickness: 0
     - _UVSec: 0
-    - _Width: 1
+    - _Width: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

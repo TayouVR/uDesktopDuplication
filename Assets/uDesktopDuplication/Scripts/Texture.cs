@@ -242,10 +242,20 @@ public class Texture : MonoBehaviour
     }
 
     int clipPositionScaleKey_;
+    int isHDRKey_;
+    int colorSpaceKey_;
+    int minLuminanceKey_;
+    int maxLuminanceKey_;
+    int maxFullFrameLuminanceKey_;
 
     void Awake()
     {
         clipPositionScaleKey_ = Shader.PropertyToID("_ClipPositionScale");
+        isHDRKey_ = Shader.PropertyToID("_IsHDR");
+        colorSpaceKey_ = Shader.PropertyToID("_ColorSpace");
+        minLuminanceKey_ = Shader.PropertyToID("_MinLuminance");
+        maxLuminanceKey_ = Shader.PropertyToID("_MaxLuminance");
+        maxFullFrameLuminanceKey_ = Shader.PropertyToID("_MaxFullFrameLuminance_");
     }
 
     void OnEnable()
@@ -296,6 +306,11 @@ public class Texture : MonoBehaviour
 
         if (monitor != null) {
             rotation = monitor.rotation;
+            material.SetFloat(isHDRKey_, monitor.isHDR ? 1 : 0);
+            //material.SetInt(colorSpaceKey_, monitor.GetColorSpace);
+            material.SetFloat(minLuminanceKey_, monitor.GetMinLuminance);
+            material.SetFloat(maxLuminanceKey_, monitor.GetMaxLuminance);
+            material.SetFloat(maxFullFrameLuminanceKey_, monitor.GetMaxFullFrameLuminance);
         }
 
         material.SetVector(clipPositionScaleKey_, new Vector4(clipPos.x, clipPos.y, clipScale.x, clipScale.y));

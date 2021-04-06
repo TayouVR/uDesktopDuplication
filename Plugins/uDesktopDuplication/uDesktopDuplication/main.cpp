@@ -298,6 +298,46 @@ extern "C"
         return -1;
     }
 
+    UNITY_INTERFACE_EXPORT int UNITY_INTERFACE_API GetColorSpaceUnity(int id)
+    {
+        if (!g_manager) return 0;
+        if (auto monitor = g_manager->GetMonitor(id))
+        {
+            return monitor->GetColorSpace();
+        }
+        return false;
+    }
+
+    UNITY_INTERFACE_EXPORT float UNITY_INTERFACE_API GetMinLuminance(int id)
+    {
+        if (!g_manager) return 0;
+        if (auto monitor = g_manager->GetMonitor(id))
+        {
+            return monitor->GetMinLuminance();
+        }
+        return false;
+    }
+
+    UNITY_INTERFACE_EXPORT float UNITY_INTERFACE_API GetMaxLuminance(int id)
+    {
+        if (!g_manager) return 0;
+        if (auto monitor = g_manager->GetMonitor(id))
+        {
+            return monitor->GetMaxLuminance();
+        }
+        return false;
+    }
+
+    UNITY_INTERFACE_EXPORT float UNITY_INTERFACE_API GetMaxFullFrameLuminance(int id)
+    {
+        if (!g_manager) return 0;
+        if (auto monitor = g_manager->GetMonitor(id))
+        {
+            return monitor->GetMaxFullFrameLuminance();
+        }
+        return false;
+    }
+
     UNITY_INTERFACE_EXPORT bool UNITY_INTERFACE_API IsHDR(int id)
     {
         if (!g_manager) return false;

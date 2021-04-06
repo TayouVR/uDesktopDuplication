@@ -58,6 +58,17 @@ inline float2 uddClipUV(float2 uv)
     return uv;
 }
 
+inline void uddConvertToSRGB(inout fixed3 rgb)
+{
+    if (_IsHDR) {
+        //TODO color space correction here
+        // Using these:
+        // _MinLuminance
+        // _MaxLuminance
+        // _MaxFullFrameLuminance
+    }
+}
+
 inline void uddConvertToLinearIfNeeded(inout fixed3 rgb)
 {
 #ifdef USE_GAMMA_TO_LINEAR_SPACE

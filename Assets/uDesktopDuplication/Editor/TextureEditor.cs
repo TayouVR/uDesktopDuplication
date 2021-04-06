@@ -81,6 +81,10 @@ public class TextureEditor : Editor
             EditorGUILayout.Vector2Field("Resolution", new Vector2(monitor.width, monitor.height));
             EditorGUILayout.Vector2Field("DPI", new Vector2(monitor.dpiX, monitor.dpiY));
             EditorGUILayout.Toggle("Is HDR", monitor.isHDR);
+            EditorGUILayout.IntField("Color Space", monitor.GetColorSpace);
+            EditorGUILayout.FloatField("Minimal Luminance", monitor.GetMinLuminance);
+            EditorGUILayout.FloatField("Maximum Luminance", monitor.GetMaxLuminance);
+            EditorGUILayout.FloatField("Max Full Frame Luminance", monitor.GetMaxFullFrameLuminance);
         });
     }
 
